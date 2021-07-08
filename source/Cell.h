@@ -115,9 +115,6 @@ class GAMEOFLIFE_API ACell : public AActor
 		UFUNCTION()
 		void ChangeState();
 
-		UPROPERTY()
-		TArray<ACell*> Neighbours;
-
 		int32 Dead = 0;
 		int32 Alive = 0;
 

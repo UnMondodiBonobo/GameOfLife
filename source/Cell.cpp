@@ -161,7 +161,7 @@ void ACell::Interaction()
 	{
 		/*Any dead cell with exactly three live neighbours becomes a live cell, as if by reproduction.*/
 
-		if(Alive == 3) {bIsDeadtemp = false;}
+		if(Alive == 3) {bIsDeadtemp = false;} /* use bIsDeadtemp as a placeholder */
 	}
 
 	else /* if this cell is still alive*/
@@ -169,16 +169,16 @@ void ACell::Interaction()
 		/*Any live cell with fewer than two live neighbours dies, as if by underpopulation.
 		Any live cell with more than three live neighbours dies, as if by overpopulation.*/
 		
-		if(Alive < 2 || Alive > 3) {bIsDeadtemp = true; }
+		if(Alive < 2 || Alive > 3) {bIsDeadtemp = true; }/* use bIsDeadtemp as a placeholder */
 	}
 
-	/* Call ChangeState function after 0.05 seconds Interaction fucntion has been called*/
+	/* Call ChangeState function 0.05 seconds after Interaction function has been called*/
 	GetWorldTimerManager().SetTimer(TimerHandleToChangeState, this, &ACell::ChangeState, 0.05f, false);
 
 
 }
 
-/*This function change the state of the cells, based on the result of bIsDeadtemp*/
+/*This function change the state of bIsDead, based on the result of bIsDeadtemp*/
 void ACell::ChangeState() 
 {
 	bIsDead = bIsDeadtemp;
